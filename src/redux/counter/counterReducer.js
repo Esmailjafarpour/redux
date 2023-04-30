@@ -11,7 +11,7 @@ const counterReducer = (state = initialState , action) => {
 
                return{
                     ...state,
-                    counter : state.counter+1
+                    counter : state.counter+ action.payload
                }
 
                break;
@@ -20,7 +20,7 @@ const counterReducer = (state = initialState , action) => {
 
                return{
                     ...state,
-                    counter : state.counter-1
+                    counter : state.counter- action.payload
                }
 
                break;

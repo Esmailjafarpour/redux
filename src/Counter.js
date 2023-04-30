@@ -29,21 +29,22 @@
 // export default connect(mapStateToProps , mapDispatchToProps) (Counter);
 
 //method Two
-import React from 'react';
+import React , {useState} from 'react';
 import {increaseCounter , decreaseCounter} from "./redux/counter/counterAction";
 import {useSelector , useDispatch} from "react-redux";
 
 
 const Counter = () => {
-
+     const [value, setValue] = useState(1);
      const state = useSelector(state => state);
      const dispatch = useDispatch();
 
      return (
           <div>
                <h2>Counter - {state.counterState.counter}</h2>
-               <button onClick={() => dispatch(increaseCounter())}>increaseCounter</button>
-               <button onClick={() => dispatch(decreaseCounter())}>decreaseCounter</button>
+               <input type="text" value={value} onChange={(event) => setValue(event.target.value)}/>
+               <button onClick={() => dispatch(increaseCounter(+value))}>increaseCounter</button>
+               <button onClick={() => dispatch(decreaseCounter(+value))}>decreaseCounter</button>
           </div>
      );
 }

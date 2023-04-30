@@ -1,10 +1,16 @@
- const increaseCounter = () => {
-     return {type : "INCREASE_COUNTER"}
+ const increaseCounter = (value=1) => {
+     return {
+        type : "INCREASE_COUNTER",
+        payload : value
+    }
 }
 
 
- const decreaseCounter = () => {
-     return {type : "DECREASE_COUNTER"}
+ const decreaseCounter = (value=1) => {
+     return {
+        type : "DECREASE_COUNTER",
+        payload : value
+    }
 }
 
 
