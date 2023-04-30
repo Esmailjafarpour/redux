@@ -30,19 +30,20 @@
 
 //method Two
 import React from 'react';
-import {increase} from "./redux/counter/counterAction";
+import {increaseCounter , decreaseCounter} from "./redux/counter/counterAction";
 import {useSelector , useDispatch} from "react-redux";
 
 
-const Counter = (props) => {
+const Counter = () => {
 
      const state = useSelector(state => state);
      const dispatch = useDispatch();
-     
+
      return (
           <div>
-               <h2>Counter{state.counter}</h2>
-               <button onClick={() => dispatch(increase())}>Increase</button>
+               <h2>Counter - {state.counterState.counter}</h2>
+               <button onClick={() => dispatch(increaseCounter())}>increaseCounter</button>
+               <button onClick={() => dispatch(decreaseCounter())}>decreaseCounter</button>
           </div>
      );
 }

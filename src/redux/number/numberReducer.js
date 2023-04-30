@@ -1,26 +1,25 @@
-
 const initialState = {
-     counter : 0
+     number : 100
 }
 
-const counterReducer = (state = initialState , action) => {
+const numberReducer = (state = initialState , action) => {
 
      switch (action.type) {
 
-          case "INCREASE_COUNTER":
+          case "INCREASE_NUMBER":
 
                return{
                     ...state,
-                    counter : state.counter+1
+                    number : state.number+1
                }
 
                break;
 
-          case "DECREASE_COUNTER":
+          case "DECREASE_NUMBER":
 
                return{
                     ...state,
-                    counter : state.counter-1
+                    number : state.number-1
                }
 
                break;
@@ -32,4 +31,4 @@ const counterReducer = (state = initialState , action) => {
 
 }
 
-export default counterReducer;
+export default numberReducer;
